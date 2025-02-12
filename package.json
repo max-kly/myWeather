@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=production jest --forceExit",
-    "seed": "NODE_ENV=production node ./data/seed.js"
+    "seed": "NODE_ENV=production node ./data/seed.js",
+    "server": "NODE_ENV=production nodemon api/index.js"
   },
   "keywords": [],
   "author": "",
