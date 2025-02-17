@@ -1,4 +1,4 @@
-# ⛅️ iWeather - A simple weather app in JavaScript
+# ⛅️ myWeather - A simple weather app in JavaScript
 
 ## TechStach ⚙️
 ⚡ ReactJS
