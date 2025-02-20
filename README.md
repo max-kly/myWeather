@@ -1,8 +1,8 @@
 # ⛅️ myWeather - A simple weather app in JavaScript
 - Check the current weather and weather forecast for current location
 - Search for different towns and cities across the world to get current weather and weather forecast for a specific location
-- Save favourite locations in a list for quick access <br>
-Live demo is [here]()<br>
+- Save favourite locations in a list for quick access <br><br>
+Live demo is [here]()
 
 ### How does application work? 🔧
 Application contains a database of cities across the world that contains latitudes and longitudes. Application gets users location (lat, lng) and sends a request to API to get current and future weather for location. User can search for a specific feature. Once the user starts typing in a search bar, application sends a request to a database to get all cities and their coordinates that look like user's search. Click on a city in the search sends a request to API and fetches the weather for a specified location and displays it in a new window. When user click "Save location" app makes a record of a location to the local storage so it will be available later. Clicking on "Saved locations" opens up a list of favourite user locations from a local storage.<br>
@@ -14,8 +14,8 @@ Application contains a database of cities across the world that contains latitud
 - ⚡ ExpressJS
 - ⚡ Axios
 - ⚡ Supabase
-- ⚡ [Weather API](https://www.weatherapi.com) <br>
-Requirements:
+- ⚡ [Weather API](https://www.weatherapi.com) <br><br>
+Requirements:<br><br>
 - NodeJS: `22.11.0`
 - ExpressJS: `^4.21.2`
 - Axios: `^1.7.9`
