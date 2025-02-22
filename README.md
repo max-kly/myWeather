@@ -65,4 +65,4 @@ export default defineConfig({
 - - `api` - includes backend of the project. 2 contollers and 2 models. Internal controllers and models are for database interactions, external models and controllers for interacting with Weather API
 - - `config` - settings to get access to your database and Weather API throughout the application
 - `data` - includes some dummy data for tests as well as data for seeding your production database
-- `frontend` - includes react application and all required components
+- `frontend` - includes React application and all required components
