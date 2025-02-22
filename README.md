@@ -32,18 +32,17 @@ Requirements:<br><br>
 2. Create a Supabase account
 3. Save you database password from Supabase setup
 4. In your Supabase account click on `Connect` and copy your database connection from `Transaction pooler` section
-5. In your terminal run `npm install` command to install all required dependencies
-6. In the root directory create a `.env.production` file and set `DATABASE_URL=*your URL*`. Change \*your URL\* to your actual database connection URL you have copied in `step 4`. Make sure to change `[YOUR-PASSWORD]` to your actual database password you have saved in `step 3`
-7. Go to [Weather API](https://www.weatherapi.com) and create a free account. Save your API key
-8. In the root directory create a `.env.api` file and set `API_KEY=*your-api-key*`. Change \*your-api-key\* to your actual API key you have saved in `step 7`.
-9. In your terminal run a command `npm run seed` to create a table with cities and seed it with data
-10. Run `npm test integrations.test.js` to make sure everything is set up and working correctly. If all tests fails try to remove `.skip` from the last test in `integrations.test.js` to check if there is a problem with the API key. If problem is not related to the Weather API key - look into seeding<br><br>
+5. In your terminal go to the `backend` directory and run `npm install` command to install all required dependencies for backend
+6. In your terminal go to the `frontend` directory and run `npm install` command to install all required dependencies for frontend
+7. In the root directory create a `.env.production` file and set `DATABASE_URL=*your URL*`. Change \*your URL\* to your actual database connection URL you have copied in `step 4`. Make sure to change `[YOUR-PASSWORD]` to your actual database password you have saved in `step 3`
+8. Go to [Weather API](https://www.weatherapi.com) and create a free account. Save your API key
+9. In the root directory create a `.env.api` file and set `API_KEY=*your-api-key*`. Change \*your-api-key\* to your actual API key you have saved in `step 8`.
+10. In your terminal go to the `backend` directory and run `npm run seed` command to create a table with cities and seed it with data
+11. From the `backend` directory in your terminal run `npm test integrations.test.js` to make sure everything is set up and working correctly. If all tests fails try to remove `.skip` from the last test in `integrations.test.js` to check if there is a problem with the API key. If problem is not related to the Weather API key - look into seeding<br><br>
 
 ## How to run locally 🏠
 As application is made up of 2 parts you have to run both, frontend and backend. It adds one additional step in configuration
-1. Run `npm install` command in your root directory to get backend modules
-2. Run `npm install` command in `frontend` directory to get frontend modules
-3. Add proxy settings to make frontend and backend listen to the same port as by default frontend is running on port 5173 and backend is on port 3000. To do this go to `frontend/vite.config.js` and make sure it looks like this (you can remove it later as you're done with running locally):
+1. Add proxy settings to make frontend and backend listen to the same port as by default frontend is running on port `5173` and backend is on port `3000`. To do this go to `frontend/vite.config.js` and make sure it looks like this (you can remove it later when you're done with running locally):
 ```
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -56,12 +55,13 @@ export default defineConfig({
   },
 })
 ```
-4. Run `npm run server` command to start a backend
-5. Open additional terminal and run `npm run dev` to start your frontend
+2. Open up `backend` directory in your terminal and run `npm run server` command to start backend
+3. Open additional terminal, open up a `frontend` directory in your terminal and run `npm run dev` to start your frontend
 
 ## Project structure 👨‍💻
-- `__tests__` - includes integration tests for backend
-- `api` - includes backend of the project. 2 contollers and 2 models. Internal controllers and models are for database interactions, external models and controllers for interacting with Weather API
-- `config` - settings to get access to your database and Weather API throughout the application
+- `backend`:
+- - `__tests__` - includes integration tests for backend
+- - `api` - includes backend of the project. 2 contollers and 2 models. Internal controllers and models are for database interactions, external models and controllers for interacting with Weather API
+- - `config` - settings to get access to your database and Weather API throughout the application
 - `data` - includes some dummy data for tests as well as data for seeding your production database
 - `frontend` - includes react application and all required components
