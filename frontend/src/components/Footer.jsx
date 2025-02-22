@@ -3,7 +3,7 @@ const Footer = () => {
         <footer>
             <div className="profile">
                 <a className="github" href="https://github.com/max-kly">
-                    <img src="max-kly.jpg" alt="" srcset="" />
+                    <img src="max-kly.jpg" alt="Max Kly - Fullstack JavaScript Engineer"/>
                     <div className="details">
                         <div className="name">Max Kly</div>
                         <div className="position">Fullstack JavaScript Engineer</div>
