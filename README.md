@@ -39,6 +39,7 @@ Requirements:<br><br>
 9. In the root directory create a `.env.api` file and set `API_KEY=*your-api-key*`. Change \*your-api-key\* to your actual API key you have saved in `step 8`.
 10. In your terminal go to the `backend` directory and run `npm run seed` command to create a table with cities and seed it with data
 11. From the `backend` directory in your terminal run `npm test integrations.test.js` to make sure everything is set up and working correctly. If all tests fails try to remove `.skip` from the last test in `integrations.test.js` to check if there is a problem with the API key. If problem is not related to the Weather API key - look into seeding<br><br>
+12. To remove or change `Footer` go to `frontend/src/components/Footer.jsx`
 
 ## How to run locally 🏠
 As application is made up of 2 parts you have to run both, frontend and backend. It adds one additional step in configuration
