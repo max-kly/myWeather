@@ -1,9 +1,10 @@
+const cors = require('cors')
 const express = require('express')
 const app = express()
 const port = 3000
 const { health, getCities, getAllCities } = require('./controllers/internal.controller.js')
 const { getWeather } = require('./controllers/external.controller.js')
-
+app.use(cors())
 app.get('/api/health', health)
 app.get('/api/cities', getAllCities)
 app.get('/api/cities/:city', getCities)
