@@ -1,0 +1,1 @@
+export const frontend_url = 'https://my-weather-by-max-kly.netlify.app/'
