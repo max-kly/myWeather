@@ -1,0 +1,1 @@
+export const backend_url = 'https://myweather-qzd6.onrender.com'
