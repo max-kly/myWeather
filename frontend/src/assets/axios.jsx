@@ -1,5 +1,7 @@
 import axios from "axios"
-const domain = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_LOCALHOST_BACKEND
+const backend_url = import.meta.env.VITE_BACKEND_URL
+const localhost = import.meta.env.VITE_LOCALHOST_BACKEND
+const domain = backend_url || localhost
 const axiosRequest = axios.create({
     baseURL: domain
 })
