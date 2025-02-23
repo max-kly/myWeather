@@ -1,6 +1,6 @@
-import { frontend_url } from "./frontend_url"
+import { backend_url } from "./backend_url"
 import axios from "axios"
-const domain = frontend_url || import.meta.env.VITE_DOMAIN
+const domain = backend_url || import.meta.env.VITE_DOMAIN
 const axiosRequest = axios.create({
     baseURL: domain
 })
