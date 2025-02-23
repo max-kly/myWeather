@@ -603,9 +603,11 @@ footer {
     color: #FFF;
     margin-bottom: 5px;
 }
+
 .github .position {
     color: rgba(255, 255, 255, .7);
 }
+
 @media screen and (max-width: 840px) {
     .header .button-desc {
         display: none;
@@ -613,6 +615,25 @@ footer {
 
     .header .icon {
         margin: unset;
+    }
+
+    .location-window .header {
+        display: flex;
+        justify-content: center;
+    }
+
+    #closePreview,
+    #saveLoc {
+        position: absolute;
+        top: 20px;
+    }
+
+    #closePreview {
+        left: 20px;
+    }
+
+    #saveLoc {
+        right: 20px;
     }
 
     .header button {

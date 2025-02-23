@@ -4,7 +4,7 @@ const PreviewHeader = ({ setShowLocationPreview }) => {
     const { weatherData } = useWeather()
     return (
         <div className="header">
-            <button className="closePreview" onClick={(e) => {
+            <button id="closePreview" className="closePreview" onClick={(e) => {
                 e.currentTarget.parentElement.parentElement.classList.add('hidden')
                 setTimeout(() => {
                     setShowLocationPreview(false)
@@ -15,7 +15,7 @@ const PreviewHeader = ({ setShowLocationPreview }) => {
                 </svg>
             </button>
             <CentralData weatherData={weatherData}></CentralData>
-            <button className="" onClick={(e) => {
+            <button id="saveLoc" className="" onClick={(e) => {
                 e.currentTarget.querySelector('span').innerHTML = 'Saved'
                 e.currentTarget.parentElement.parentElement.classList.add('hidden')
                 setTimeout(() => {
