@@ -62,7 +62,7 @@ export default defineConfig({
 ## Project structure 👨‍💻
 - `backend`:
 - - `__tests__` - includes integration tests for backend
-- - `api` - includes backend of the project. 2 contollers and 2 models. Internal controllers and models are for database interactions, external models and controllers for interacting with Weather API
+- - `api` - includes backend of the project. 2 controllers and 2 models. Internal controllers and models are for database interactions, external models and controllers for interacting with Weather API
 - - `config` - settings to get access to your database and Weather API throughout the application
 - `data` - includes some dummy data for tests as well as data for seeding your production database
 - `frontend` - includes React application and all required components
