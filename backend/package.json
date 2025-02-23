@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "NODE_ENV=production node api/index.js",
     "test": "NODE_ENV=production jest --forceExit",
     "seed": "NODE_ENV=production node ../data/seed.js",
     "server": "NODE_ENV=production nodemon api/index.js"
