@@ -2,7 +2,7 @@
 - Check the current weather and weather forecast for current location
 - Search for different towns and cities across the world to get current weather and weather forecast for a specific location
 - Save favourite locations in a list for quick access <br><br>
-Live demo is [here]()
+Live demo is [here](https://my-weather-by-max-kly.netlify.app/)
 
 ### How does application work? 🔧
 Application contains a database of cities across the world that contains latitudes and longitudes. Application gets users location (lat, lng) and sends a request to API to get current and future weather for location. User can search for a specific feature. Once the user starts typing in a search bar, application sends a request to a database to get all cities and their coordinates that look like user's search. Click on a city in the search sends a request to API and fetches the weather for a specified location and displays it in a new window. When user click "Save location" app makes a record of a location to the local storage so it will be available later. Clicking on "Saved locations" opens up a list of favourite user locations from a local storage.<br>
@@ -14,6 +14,8 @@ Application contains a database of cities across the world that contains latitud
 - ⚡ ExpressJS
 - ⚡ Axios
 - ⚡ Supabase
+- ⚡ Render
+- ⚡ Netlify
 - ⚡ [Weather API](https://www.weatherapi.com) <br><br>
 Requirements:<br><br>
 - NodeJS: `22.11.0`
@@ -43,20 +45,8 @@ Requirements:<br><br>
 
 ## How to run locally 🏠
 As application is made up of 2 parts you have to run both, frontend and backend. It adds one additional step in configuration
-1. Add proxy settings to make frontend and backend listen to the same port as by default frontend is running on port `5173` and backend is on port `3000`. To do this go to `frontend/vite.config.js` and make sure it looks like this (you can remove it later when you're done with running locally):
-```
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      '/api': 'http://localhost:3000',
-    },
-  },
-})
-```
-2. Open up `backend` directory in your terminal and run `npm run server` command to start backend
+1. Open up `frontend` directory and in `.env` file remove or comment out `BACKEND_URL` key. As you fork and clone down the repo by default there will be hardcoded URL to my backend
+2. Go to `backend` directory in your terminal and run `npm run server` command to start backend
 3. Open additional terminal, open up a `frontend` directory in your terminal and run `npm run dev` to start your frontend
 
 ## Project structure 👨‍💻
@@ -66,3 +56,20 @@ export default defineConfig({
 - - `config` - settings to get access to your database and Weather API throughout the application
 - `data` - includes some dummy data for tests as well as data for seeding your production database
 - `frontend` - includes React application and all required components
+
+## Deployment ☁️
+1. Head to the [Render](https://render.com) and create a new account or sign in to existing one
+2. Click on `New` and choose `Web service`
+3. Choose your source code. It can be either `Git Provider` or a specific `Public Git Repository`. Just pick most suitable for you option and click on `Connect`
+4. Leave other options such as `Language` and `Branch` as they are and for option `Root Directory` set `backend`.
+5. Set `Start command` to `yarn start`
+6. In `Environment Variables` add your variables from your `.env` files as a key-value pair. Add your `API_KEY` and `DATABASE_URL`
+7. Click on Deploy Web Service
+8. Copy your live URL for your deployed backend
+9. Open up `frontend` folder and in `.env` set `VITE_BACKEND_URL=*your-url*`. Change \*your-url\* to your actual URL you have saved in `step 8`.
+10. Go to the [Netlify](https://www.netlify.com) and create a new account or sign in to existing one
+11. Set up your team and create a new project, connect your GitHub account
+12. Install Netlify CLI running `npm install netlify-cli -g` command
+13. Open up `frontend` directory in your terminal and run `npm run build` command to prepare your frontend for deployment
+14. In the same directory run `netlify deploy --prod` command and choose an exisiting project
+15. For publishing direcotry enter `dist`
