@@ -9,7 +9,7 @@ import LocationPreview from './components/LocationPreview'
 import PreviewHeader from './components/PreviewHeader'
 import Footer from './components/Footer'
 import axiosRequest from './assets/axios'
-
+import Error from './components/Error'
 
 function App() {
   const [weatherData, setWeatherData] = useState(null)
@@ -17,6 +17,7 @@ function App() {
   const [currentLocation, setCurrentLocation] = useState(null)
   const [showLocationPreview, setShowLocationPreview] = useState(false)
   const [previewWeatherData, setPreviewWeatherData] = useState(null)
+  const [error, setError] = useState({})
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (location) => {
@@ -35,10 +36,17 @@ function App() {
           setWeatherData(data)
           setIsLoading(false)
         })
+        .catch((err) => {
+          setError(err)
+          setIsLoading(false)
+        })
     }
   }, [currentLocation])
   if (isLoading) {
     return (<Preloader />)
+  }
+  if (Object.keys(error).length > 0) {
+    return <Error err={error} />
   }
   else {
     return (

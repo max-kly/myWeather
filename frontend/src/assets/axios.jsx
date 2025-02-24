@@ -4,6 +4,6 @@ const localhost = import.meta.env.VITE_LOCALHOST_BACKEND
 const domain = backend_url || localhost
 const axiosRequest = axios.create({
     baseURL: domain,
-    timeout: 60000,
+    timeout: 6000,
 })
 export default axiosRequest
