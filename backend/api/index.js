@@ -1,3 +1,4 @@
+const noSleep = require('../noSleep.js')
 const cors = require('cors')
 const express = require('express')
 const app = express()
@@ -21,4 +22,5 @@ app.use((err, request, response, next) => {
         response.status(err.status).send(err.statusText)
     }
 })
+noSleep()
 module.exports = app
