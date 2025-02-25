@@ -73,3 +73,6 @@ As application is made up of 2 parts you have to run both, frontend and backend.
 13. Open up `frontend` directory in your terminal and run `npm run build` command to prepare your frontend for deployment
 14. In the same directory run `netlify deploy --prod` command and choose an exisiting project
 15. For publishing direcotry enter `dist`
+
+## `noSleep.js`
+`noSleep.js` file in the `backend` folder prevents Render from spinning down and turning off bacause of free plan. If you don't need that - delete the file and inside of `backend/api/index.js` remove `noSleep.js` from required files and from calling it on line 25.
