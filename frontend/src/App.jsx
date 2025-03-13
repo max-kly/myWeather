@@ -3,12 +3,12 @@ import Preloader from './components/Preloader'
 import Background from './components/Background'
 import { WeatherProvider } from './components/WeatherContext'
 import Header from './components/Header'
-import HourForecast from './components/HourForecast'
-import AdditionalData from './components/AdditionalData'
-import LocationPreview from './components/LocationPreview'
+import HourForecast from './components/data/HourForecast'
+import AdditionalData from './components/data/AdditionalData'
+import LocationPreview from './components/windows/LocationPreview'
 import PreviewHeader from './components/PreviewHeader'
 import Footer from './components/Footer'
-import axiosRequest from './assets/axios'
+import { fetchWeather } from './assets/axios'
 import Error from './components/Error'
 
 function App() {
@@ -31,8 +31,8 @@ function App() {
   useEffect(() => {
     if (currentLocation?.lat && currentLocation?.lng) {
       setIsLoading(true)
-      axiosRequest.get(`/api/weather?lat=${currentLocation.lat}&lng=${currentLocation.lng}`)
-        .then(({ data }) => {
+      fetchWeather(currentLocation.lat, currentLocation.lng)
+        .then((data) => {
           setWeatherData(data)
           setIsLoading(false)
         })

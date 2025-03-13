@@ -1,4 +1,4 @@
-import { useWeather } from "./WeatherContext"
+import { useWeather } from "../WeatherContext"
 const CentralData = () => {
     const { weatherData } = useWeather()
     const city = weatherData.location.name

@@ -1,4 +1,4 @@
-import axiosRequest from "../assets/axios"
+import { fetchWeather } from "../../assets/axios"
 const CityList = ({ cities, searchQuery, setShowList, setShowLocationPreview, setPreviewWeatherData }) => {
     if (!cities.length && searchQuery !== '') {
         return (
@@ -14,11 +14,9 @@ const CityList = ({ cities, searchQuery, setShowList, setShowLocationPreview, se
                     return <div onClick={(e) => {
                         const lat = e.currentTarget.dataset.lat
                         const lng = e.currentTarget.dataset.lng
-                        axiosRequest.get(`/api/weather?lat=${lat}&lng=${lng}`)
-                            .then(({ data }) => {
-                                setShowList((list) => {
-                                    !list
-                                })
+                        fetchWeather(lat, lng)
+                            .then((data) => {
+                                setShowList((list) => { !list })
                                 setShowLocationPreview(true)
                                 setPreviewWeatherData(data)
                             })

@@ -1,4 +1,4 @@
-import { useWeather } from "./WeatherContext"
+import { useWeather } from "../WeatherContext"
 const Sunset = () => {
     const { weatherData } = useWeather()
     const data = weatherData.forecast.forecastday[0].astro

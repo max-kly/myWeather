@@ -1,4 +1,4 @@
-import { useWeather } from "./WeatherContext"
+import { useWeather } from "../WeatherContext"
 const Visibility = () => {
     const {weatherData} = useWeather()
     const data = weatherData.current

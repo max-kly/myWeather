@@ -1,5 +1,5 @@
-import getDaysForecast from "../utils/getDaysForecast"
-import { useWeather } from "./WeatherContext"
+import getDaysForecast from "../../utils/getDaysForecast"
+import { useWeather } from "../WeatherContext"
 const DayForecast = () => {
     const { weatherData } = useWeather()
     const threeDayForecast = getDaysForecast(weatherData.forecast.forecastday)
