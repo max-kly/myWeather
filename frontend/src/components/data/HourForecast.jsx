@@ -1,5 +1,5 @@
-import { useWeather } from "./WeatherContext"
-import getHourForecast from "../utils/getHourForecast"
+import { useWeather } from "../WeatherContext"
+import getHourForecast from "../../utils/getHourForecast"
 const HourForecast = () => {
     const { weatherData } = useWeather()
     const hourWeather = getHourForecast(weatherData.forecast.forecastday.slice(0, 2))
