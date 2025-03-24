@@ -17,17 +17,18 @@ Application contains a database of cities across the world that contains latitud
 - ⚡ Render
 - ⚡ Netlify
 - ⚡ [Weather API](https://www.weatherapi.com) <br><br>
-Requirements:<br><br>
-- NodeJS: `22.11.0`
-- ExpressJS: `^4.21.2`
-- Axios: `^1.7.9`
-- Dotenv: `^16.4.7`
-- PG: `^8.13.1`
-- React: `^19.0.0`
-- ReactDOM: `^19.0.0`
-- Jest: `^29.7.0` - dev dependency
-- Supertest `^7.0.0` - dev dependency
-- PG Format: `^1.0.4` - dev dependency
+
+## Requirements ❗️
+- 📦 NodeJS: `22.11.0`
+- 📦 ExpressJS: `^4.21.2`
+- 📦 Axios: `^1.7.9`
+- 📦 Dotenv: `^16.4.7`
+- 📦 PG: `^8.13.1`
+- 📦 React: `^19.0.0`
+- 📦 ReactDOM: `^19.0.0`
+- 📦 Jest: `^29.7.0` - dev dependency ⚙️
+- 📦 Supertest `^7.0.0` - dev dependency ⚙️
+- 📦 PG Format: `^1.0.4` - dev dependency ⚙️
 
 ## Installation 👨‍💻
 1. Fork the repo and clone in down
@@ -40,7 +41,7 @@ Requirements:<br><br>
 8. Go to [Weather API](https://www.weatherapi.com) and create a free account. Save your API key
 9. In the root directory create a `.env.api` file and set `API_KEY=*your-api-key*`. Change \*your-api-key\* to your actual API key you have saved in `step 8`.
 10. In your terminal go to the `backend` directory and run `npm run seed` command to create a table with cities and seed it with data
-11. From the `backend` directory in your terminal run `npm test integrations.test.js` to make sure everything is set up and working correctly. If all tests fails try to remove `.skip` from the last test in `integrations.test.js` to check if there is a problem with the API key. If problem is not related to the Weather API key - look into seeding<br><br>
+11. From the `backend` directory in your terminal run `npm test integrations.test.js` to make sure everything is set up and working correctly. If all tests fails try to remove `.skip` from the last test in `integrations.test.js` to check if there is a problem with the API key. If problem is not related to the Weather API key - look into seeding
 12. To remove or change `Footer` go to `frontend/src/components/Footer.jsx`
 
 ## How to run locally 🏠
@@ -58,6 +59,8 @@ As application is made up of 2 parts you have to run both, frontend and backend.
 - `frontend` - includes React application and all required components
 
 ## Deployment ☁️
+> [!CAUTION]
+> Before proceeding to any deployment steps, make sure to go through the explanation of [noSleep.js](#nosleepjs) file
 1. Head to the [Render](https://render.com) and create a new account or sign in to existing one
 2. Click on `New` and choose `Web service`
 3. Choose your source code. It can be either `Git Provider` or a specific `Public Git Repository`. Just pick most suitable for you option and click on `Connect`
@@ -75,4 +78,4 @@ As application is made up of 2 parts you have to run both, frontend and backend.
 15. For publishing direcotry enter `dist`
 
 ## `noSleep.js`
-`noSleep.js` file in the `backend` folder prevents Render from spinning down and turning off bacause of free plan. If you don't need that - delete the file and inside of `backend/api/index.js` remove `noSleep.js` from required files and from calling it on line 25.
+`noSleep.js` file in the `backend` folder prevents Render from spinning down and turning off bacause of inactivity (no API requests in a span of 15 mins) on the free plan. To prevent cold starts `noSleep` function makes server to make a request to itself every 2 minutes and keeps backend up and running 24/7. If you are not going to use free plan or not going to use Render and backend will be hosted without such limitations - delete the file and inside of `backend/api/index.js` remove `noSleep.js` from required files and from calling it on line 25. If you're going to use Render's free plan or any other hosting provider has similar limitations, make sure to update your backend URL in the `noSleep.js` file to your actual API URL.
