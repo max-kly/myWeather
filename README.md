@@ -1,81 +1,173 @@
-# ⛅️ myWeather - A simple weather app in JavaScript
-- Check the current weather and weather forecast for current location
-- Search for different towns and cities across the world to get current weather and weather forecast for a specific location
-- Save favourite locations in a list for quick access <br><br>
-Live demo is [here](https://my-weather-by-max-kly.netlify.app/)
+# ⛅️ myWeather - A Simple Weather App in JavaScript
 
-### How does application work? 🔧
-Application contains a database of cities across the world that contains latitudes and longitudes. Application gets users location (lat, lng) and sends a request to API to get current and future weather for location. User can search for a specific feature. Once the user starts typing in a search bar, application sends a request to a database to get all cities and their coordinates that look like user's search. Click on a city in the search sends a request to API and fetches the weather for a specified location and displays it in a new window. When user click "Save location" app makes a record of a location to the local storage so it will be available later. Clicking on "Saved locations" opens up a list of favourite user locations from a local storage.<br>
+[Live Demo](https://my-weather-by-max-kly.netlify.app/)
 
-## TechStach ⚙️
-- ⚡ ReactJS
-- ⚡ NodeJS
-- ⚡ PostgreSQL
-- ⚡ ExpressJS
-- ⚡ Axios
-- ⚡ Supabase
-- ⚡ Render
-- ⚡ Netlify
-- ⚡ [Weather API](https://www.weatherapi.com) <br><br>
+## Features 🌍
+- ✅ Check the **current weather** and **weather forecast** for your location.
+- ✅ Search for different **towns and cities** worldwide to get weather updates.
+- ✅ Save **favourite locations** in a list for quick access.
+
+## How It Works 🔧
+The app uses a **database of cities** that includes their latitude and longitude. It fetches the user's location and sends a request to the API to retrieve the **current and forecasted weather**.  
+
+### Search Feature 🔍
+- As you start typing in the **search bar**, the app queries the database for **matching cities and coordinates**.
+- Clicking on a city **fetches** its weather and **displays** it in a new window.
+- Clicking **"Save Location"** stores it in the **local storage**, making it available later.
+- Clicking **"Saved Locations"** opens the list of **saved locations** from local storage.
+
+---
+
+## Tech Stack ⚙️
+
+- ⚡ **ReactJS**
+- ⚡ **NodeJS**
+- ⚡ **PostgreSQL**
+- ⚡ **ExpressJS**
+- ⚡ **Axios**
+- ⚡ **Supabase**
+- ⚡ **Render**
+- ⚡ **Netlify**
+- ⚡ [Weather API](https://www.weatherapi.com)
+
+---
 
 ## Requirements ❗️
-- 📦 NodeJS: `22.11.0`
-- 📦 ExpressJS: `^4.21.2`
-- 📦 Axios: `^1.7.9`
-- 📦 Dotenv: `^16.4.7`
-- 📦 PG: `^8.13.1`
-- 📦 React: `^19.0.0`
-- 📦 ReactDOM: `^19.0.0`
-- 📦 Jest: `^29.7.0` - dev dependency ⚙️
-- 📦 Supertest `^7.0.0` - dev dependency ⚙️
-- 📦 PG Format: `^1.0.4` - dev dependency ⚙️
 
-## Installation 👨‍💻
-1. Fork the repo and clone in down
-2. Create a Supabase account
-3. Save you database password from Supabase setup
-4. In your Supabase account click on `Connect` and copy your database connection from `Transaction pooler` section
-5. In your terminal go to the `backend` directory and run `npm install` command to install all required dependencies for backend
-6. In your terminal go to the `frontend` directory and run `npm install` command to install all required dependencies for frontend
-7. In the root directory create a `.env.production` file and set `DATABASE_URL=*your URL*`. Change \*your URL\* to your actual database connection URL you have copied in `step 4`. Make sure to change `[YOUR-PASSWORD]` to your actual database password you have saved in `step 3`
-8. Go to [Weather API](https://www.weatherapi.com) and create a free account. Save your API key
-9. In the root directory create a `.env.api` file and set `API_KEY=*your-api-key*`. Change \*your-api-key\* to your actual API key you have saved in `step 8`.
-10. In your terminal go to the `backend` directory and run `npm run seed` command to create a table with cities and seed it with data
-11. From the `backend` directory in your terminal run `npm test integrations.test.js` to make sure everything is set up and working correctly. If all tests fails try to remove `.skip` from the last test in `integrations.test.js` to check if there is a problem with the API key. If problem is not related to the Weather API key - look into seeding
-12. To remove or change `Footer` go to `frontend/src/components/Footer.jsx`
+| Package | Version |
+|---------|---------|
+| NodeJS | `22.11.0` |
+| ExpressJS | `^4.21.2` |
+| Axios | `^1.7.9` |
+| Dotenv | `^16.4.7` |
+| PG | `^8.13.1` |
+| React | `^19.0.0` |
+| ReactDOM | `^19.0.0` |
+| Jest | `^29.7.0` (dev dependency) |
+| Supertest | `^7.0.0` (dev dependency) |
+| PG Format | `^1.0.4` (dev dependency) |
 
-## How to run locally 🏠
-As application is made up of 2 parts you have to run both, frontend and backend. It adds one additional step in configuration
-1. Open up `frontend` directory and in `.env` file remove or comment out `BACKEND_URL` key. As you fork and clone down the repo by default there will be hardcoded URL to my backend
-2. Go to `backend` directory in your terminal and run `npm run server` command to start backend
-3. Open additional terminal, open up a `frontend` directory in your terminal and run `npm run dev` to start your frontend
+---
 
-## Project structure 👨‍💻
-- `backend`:
-- - `__tests__` - includes integration tests for backend
-- - `api` - includes backend of the project. 2 controllers and 2 models. Internal controllers and models are for database interactions, external models and controllers for interacting with Weather API
-- - `config` - settings to get access to your database and Weather API throughout the application
-- `data` - includes some dummy data for tests as well as data for seeding your production database
-- `frontend` - includes React application and all required components
+## 🧑‍💻 Installation
 
-## Deployment ☁️
+1. **Fork & Clone** the repository.
+2. **Create a Supabase account** and save your **database password**.
+3. **Get your database connection**:  
+   - In Supabase, click on **Connect** → Copy the **Database Connection URL** under **Transaction Pooler**.
+4. **Install Backend Dependencies**  
+   ```sh
+   cd backend
+   npm install
+   ```
+5. **Install Frontend Dependencies**  
+   ```sh
+   cd ../frontend
+   npm install
+   ```
+6. **Set Up Environment Variables**  
+   - In the **root** directory, create a `.env.production` file:  
+     ```env
+     DATABASE_URL=your_database_url_here
+     ```
+   - In the **root** directory, create a `.env.api` file:  
+     ```env
+     API_KEY=your_api_key_here
+     ```
+7. **Seed the Database**  
+   ```sh
+   cd backend
+   npm run seed
+   ```
+8. **Run Tests** (optional)  
+   ```sh
+   npm test integrations.test.js
+   ```
+
+---
+
+## 🏠 How to Run Locally
+
+1. Open **frontend** and in `.env` remove or comment out `BACKEND_URL`.
+2. Start the backend:  
+   ```sh
+   cd backend
+   npm run server
+   ```
+3. Start the frontend:  
+   ```sh
+   cd frontend
+   npm run dev
+   ```
+
+---
+
+## 🌍 Deployment
+
+### 🚀 Deploy Backend (Render)
 > [!CAUTION]
-> Before proceeding to any deployment steps, make sure to go through the explanation of [noSleep.js](#nosleepjs) file
-1. Head to the [Render](https://render.com) and create a new account or sign in to existing one
-2. Click on `New` and choose `Web service`
-3. Choose your source code. It can be either `Git Provider` or a specific `Public Git Repository`. Just pick most suitable for you option and click on `Connect`
-4. Leave other options such as `Language` and `Branch` as they are and for option `Root Directory` set `backend`.
-5. Set `Start command` to `yarn start`
-6. In `Environment Variables` add your variables from your `.env` files as a key-value pair. Add your `API_KEY` and `DATABASE_URL`
-7. Click on Deploy Web Service
-8. Copy your live URL for your deployed backend
-9. Open up `frontend` folder and in `.env` set `VITE_BACKEND_URL=*your-url*`. Change \*your-url\* to your actual URL you have saved in `step 8`.
-10. Go to the [Netlify](https://www.netlify.com) and create a new account or sign in to existing one
-11. Set up your team and create a new project, connect your GitHub account
-12. Install Netlify CLI running `npm install netlify-cli -g` command
-13. Open up `frontend` directory in your terminal and run `npm run build` command to prepare your frontend for deployment
-14. In the same directory run `netlify deploy --prod` command and choose an exisiting project
-15. For publishing direcotry enter `dist`
+> Before proceeding to backend deployment steps, make sure to go through the explanation of [noSleep.js](#nosleepjs) file
+1. **Create a [Render](https://render.com) Account** → Click **New Web Service**.
+2. Connect your **GitHub repository**.
+3. Set **Root Directory** to `backend`.
+4. Set **Start Command**:  
+   ```sh
+   yarn start
+   ```
+5. Add **Environment Variables** (`DATABASE_URL` and `API_KEY`).
+6. Click **Deploy Web Service** and copy your backend URL.
 
-## `noSleep.js`
-`noSleep.js` file in the `backend` folder prevents Render from spinning down and turning off bacause of inactivity (no API requests in a span of 15 mins) on the free plan. To prevent cold starts `noSleep` function makes server to make a request to itself every 2 minutes and keeps backend up and running 24/7. If you are not going to use free plan or not going to use Render and backend will be hosted without such limitations - delete the file and inside of `backend/api/index.js` remove `noSleep.js` from required files and from calling it on line 25. If you're going to use Render's free plan or any other hosting provider has similar limitations, make sure to update your backend URL in the `noSleep.js` file to your actual API URL.
+### 🚀 Deploy Frontend (Netlify)
+1. Open `frontend/.env` and set:  
+   ```env
+   VITE_BACKEND_URL=your_render_backend_url_here
+   ```
+2. Go to the [Netlify](https://www.netlify.com) and create a new account or sign in to existing one
+3. Set up your team and create a new project, connect your GitHub account
+4. **Install Netlify CLI**
+   ```
+   npm install netlify-cli -g
+   ```
+6. **Build the Frontend**  
+   ```sh
+   cd frontend
+   npm run build
+   ```
+7. **Deploy with Netlify CLI**  
+   ```sh
+   netlify deploy --prod
+   ```
+
+---
+
+## 📂 Project Structure
+
+```
+📦 myWeather
+ ┣ 📂 backend
+ ┃ ┣ 📂 __tests__  # Integration tests
+ ┃ ┣ 📂 api        # Backend controllers & models
+ ┃ ┣ 📂 config     # Database & API config
+ ┃ ┣ 📂 data       # Seed & test data
+ ┃ ┣ 📜 index.js   # Server entry file
+ ┣ 📂 frontend
+ ┃ ┣ 📂 src        # React components
+ ┃ ┣ 📜 App.jsx    # Main App Component
+ ┣ 📜 README.md    # This file
+```
+
+---
+
+## `noSleep.js` 🛑
+
+`noSleep.js` prevents **Render's free plan** from **spinning down** the backend due to inactivity. It makes a request to itself every **2 minutes**.  
+
+If using a **paid plan** or a different hosting provider **without this limitation**, you can:
+- Delete `noSleep.js` from `backend/`.
+- Remove `noSleep.js` imports from `backend/api/index.js`.
+
+---
+
+## 📝 License
+
+This project is **MIT Licensed**.  
