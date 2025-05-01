@@ -160,7 +160,7 @@ The app uses a **database of cities** that includes their latitude and longitude
 
 ## `noSleep.js` 🛑
 
-`noSleep.js` prevents **Render's free plan** from **spinning down** the backend due to inactivity. It makes a request to itself every **2 minutes**.  
+`noSleep.js` prevents **Render's free plan** from **spinning down** the backend due to inactivity. It makes a request to itself every **2 minutes**. Function fetches the London coordinates from the database to prevent **Supabase free plan** from **spinning down** as well
 
 If using a **paid plan** or a different hosting provider **without this limitation**, you can:
 - Delete `noSleep.js` from `backend/`.
