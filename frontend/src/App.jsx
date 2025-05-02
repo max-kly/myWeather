@@ -7,7 +7,6 @@ import HourForecast from './components/data/HourForecast'
 import AdditionalData from './components/data/AdditionalData'
 import LocationPreview from './components/windows/LocationPreview'
 import PreviewHeader from './components/PreviewHeader'
-import Footer from './components/Footer'
 import { fetchWeather } from './assets/axios'
 import Error from './components/Error'
 
@@ -64,7 +63,6 @@ function App() {
             </LocationPreview>
           </WeatherProvider>
           : null}
-        <Footer />
       </WeatherProvider>
     )
   }
